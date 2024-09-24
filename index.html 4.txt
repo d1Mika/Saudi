@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اليوم الوطني السعودي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, 10px) rotate(5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        .geometric-shape {
+            position: absolute;
+            background-color: rgba(167, 243, 208, 0.2);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+    </style>
+</head>
+<body class="bg-green-50 min-h-screen font-sans relative overflow-hidden">
+    <div id="geometric-shapes"></div>
+    
+    <header class="bg-green-700 text-white py-8 relative z-10">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-4 opacity-0 transform translate-y-4" id="main-title">اليوم الوطني السعودي</h1>
+            <p class="text-3xl font-semibold opacity-0 transform translate-y-4" id="sub-title">نحلم ونحقق</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-12 px-4 relative z-10">
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center text-green-800 opacity-0 transform translate-y-4">لماذا نحتفل باليوم الوطني؟</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center opacity-0 transform translate-y-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 mx-auto mb-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                </svg>
+                <p class="text-xl">
+                    نحتفل باليوم الوطني السعودي في 23 سبتمبر من كل عام لنحيي ذكرى توحيد المملكة العربية السعودية على يد الملك عبد العزيز بن عبد الرحمن آل سعود في عام 1932. هذا اليوم يمثل لحظة فخر وطني، حيث نستذكر تاريخنا المجيد ونحتفي بإنجازاتنا ونتطلع إلى مستقبل مشرق.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center text-green-800 opacity-0 transform translate-y-4">التاريخ والملوك</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md opacity-0 transform translate-y-4">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">أهم الأحداث التاريخية</h3>
+                    <ul class="space-y-4" id="historical-events"></ul>
+                </div>
+                <div class="opacity-0 transform translate-y-4">
+                    <h3 class="text-2xl font-semibold mb-4 text-center">ملوك المملكة العربية السعودية</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="kings"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center text-green-800 opacity-0 transform translate-y-4">رؤية 2030</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md opacity-0 transform translate-y-4">
+                <div class="flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-green-600 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p class="text-xl">خطة طموحة لتنويع الاقتصاد وتطوير الخدمات العامة وتحسين جودة الحياة</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center" id="vision-2030"></div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center text-green-800 opacity-0 transform translate-y-4">إنجازات المملكة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="achievements"></div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-center text-green-800 opacity-0 transform translate-y-4">المشاريع العملاقة</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects"></div>
+        </section>
+    </main>
+
+    <footer class="bg-green-700 text-white py-6 mt-12 relative z-10">
+        <div class="container mx-auto text-center">
+            <p class="text-lg">المملكة العربية السعودية - نحلم ونحقق</p>
+            <p class="mt-2">© <span id="current-year"></span> جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        const projects = [
+            { name: "نيوم", description: "مدينة المستقبل التي تجمع بين التكنولوجيا المتقدمة والاستدامة البيئية", image: "https://images.unsplash.com/photo-1577493340887-b7bfff550145?w=500&h=300&fit=crop" },
+            { name: "القدية", description: "وجهة ترفيهية ورياضية وثقافية تقدم تجارب فريدة للزوار والمقيمين", image: "https://images.unsplash.com/photo-1575540576545-3db8a6a0e712?w=500&h=300&fit=crop" },
+            { name: "البحر الأحمر", description: "مشروع سياحي فاخر يحافظ على البيئة ويقدم تجربة سياحية استثنائية", image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&h=300&fit=crop" },
+            { name: "أماله", description: "وجهة سياحية عالمية على ساحل البحر الأحمر تجمع بين الترفيه والثقافة", image: "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=500&h=300&fit=crop" },
+            { name: "المكعب", description: "مبنى مكعب الشكل في قلب مدينة نيوم، يجمع بين الابتكار التكنولوجي والتصميم المعماري الفريد", image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=500&h=300&fit=crop" },
+            { name: "ذا لاين", description: "مدينة خطية ثورية بطول 170 كم، تجمع بين التكنولوجيا المتقدمة والاستدامة البيئية", image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=500&h=300&fit=crop" }
+        ];
+
+        const achievements = [
+            { title: "التنمية الاقتصادية", description: "تنويع الاقتصاد وتقليل الاعتماد على النفط من خلال مبادرات مثل صندوق الاستثمارات العامة", icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" },
+            { title: "التطور الاجتماعي", description: "تمكين المرأة في المجتمع وزيادة مشاركتها في سوق العمل والحياة العامة", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" },
+            { title: "السياحة والترفيه", description: "تطوير قطاع السياحة وإطلاق مواسم ترفيهية متنوعة في مختلف مناطق المملكة", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
+            { title: "التعليم", description: "تطوير المناهج التعليمية وإنشاء جامعات عالمية المستوى", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
+            { title: "الرعاية الصحية", description: "تحسين جودة الخدمات الصحية وزيادة عدد المستشفيات والمراكز الطبية", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" },
+            { title: "البيئة", description: "إطلاق مبادرات للحفاظ على البيئة وزيادة المساحات الخضراء", icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }
+        ];
+
+        function createGeometricShapes() {
+            const container = document.getElementById('geometric-shapes');
+            for (let i = 0; i < 20; i++) {
+                const shape = document.createElement('div');
+                shape.className = 'geometric-shape';
+                shape.style.width = `${Math.random() * 100 + 50}px`;
+                shape.style.height = `${Math.random() * 100 + 50}px`;
+                shape.style.left = `${Math.random() * 100}%`;
+                shape.style.top = `${Math.random() * 100}%`;
+                shape.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                container.appendChild(shape);
+            }
+        }
+
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.opacity-0');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'transform', 'translate-y-4');
+                        entry.target.classList.add('transition', 'duration-1000', 'ease-out', 'opacity-100', 'translate-y-0');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        function renderHistoricalEvents() {
+            const events = [
+                { year: "1744", event: "تأسيس الدولة السعودية الأولى على يد الإمام محمد بن سعود" },
+                { year: "1824", event: "قيام الدولة السعودية الثانية" },
+                { year: "1902", event: "استعادة الرياض على يد الملك عبدالعزيز بن عبدالرحمن آل سعود" },
+                { year: "1932", event: "توحيد المملكة العربية السعودية رسمياً" },
+                { year: "2016", event: "إطلاق رؤية المملكة 2030" }
+            ];
+            const container = document.getElementById('historical-events');
+            events.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center';
+                li.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span><strong>${item.year}:</strong> ${item.event}</span>
+                `;
+                container.appendChild(li);
+            });
+        }
+
+        function renderKings() {
+            const kings = [
+                { name: "الملك عبدالعزيز", reign: "1932 - 1953", image: "https://images.unsplash.com/photo-1566624790190-511a09f6ddbd?w=150&h=150&fit=crop" },
+                { name: "الملك سعود", reign: "1953 - 1964", image: "https://images.unsplash.com/photo-1612462766564-895ea3388d2b?w=150&h=150&fit=crop" },
+                { name: "الملك فيصل", reign: "1964 - 1975", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" },
+                { name: "الملك خالد", reign: "1975 - 1982", image: "https://images.unsplash.com/photo-1548544149-4835e62ee5b3?w=150&h=150&fit=crop" },
+                { name: "الملك فهد", reign: "1982 - 2005", image: "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=150&h=150&fit=crop" },
+                { name: "الملك عبدالله", reign: "2005 - 2015", image: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=150&h=150&fit=crop" },
+                { name: "الملك سلمان", reign: "2015 - الآن", image: "https://images.unsplash.com/photo-1548449112-96a38a643324?w=150&h=150&fit=crop" },
+            ];
+            const container = document.getElementById('kings');
+            kings.forEach(king => {
+                const div = document.createElement('div');
+                div.className = 'bg-white p-4 rounded-lg shadow-md text-center';
+                div.innerHTML = `
+                    <div class="relative w-16 h-16 mx-auto mb-2 rounded-full overflow-hidden">
+                        <img src="${king.image}" alt="${king.name}" class="absolute inset-0 w-full h-full object-cover" />
+                    </div>
+                    <h4 class="text-lg font-semibold mb-1">${king.name}</h4>
+                    <p class="text-sm">${king.reign}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderVision2030() {
+            const visionItems = [
+                { title: "مجتمع حيوي", description: "بناء مجتمع قوي وأصيل ومتماسك" },
+                { title: "اقتصاد مزدهر", description: "توفير فرص العمل وتنمية الاستثمارات" },
+                { title: "وطن طموح", description: "تعزيز الفاعلية والمسؤولية للمواطنين" }
+            ];
+            const container = document.getElementById('vision-2030');
+            visionItems.forEach(item => {
+                const div = document.createElement('div');
+                div.innerHTML = `
+                    <h3 class="text-xl font-semibold mb-2">${item.title}</h3>
+                    <p>${item.description}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderAchievements() {
+            const container = document.getElementById('achievements');
+            achievements.forEach(achievement => {
+                const div = document.createElement('div');
+                div.className = 'bg-white p-6 rounded-lg shadow-md text-center';
+                div.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 mx-auto mb-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${achievement.icon}" />
+                    </svg>
+                    <h3 class="text-xl font-semibold mb-2">${achievement.title}</h3>
+                    <p>${achievement.description}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function renderProjects() {
+            const container = document.getElementById('projects');
+            projects.forEach(project => {
+                const div = document.createElement('div');
+                div.className = 'bg-white p-6 rounded-lg shadow-md overflow-hidden cursor-pointer';
+                div.innerHTML = `
+                    <h3 class="text-2xl font-semibold mb-4">${project.name}</h3>
+                    <p class="mb-4">${project.description}</p>
+                    <div class="relative h-48 rounded-lg overflow-hidden">
+                        <img src="${project.image}" alt="صورة لمشروع ${project.name}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-300" />
+                    </div>
+                `;
+                div.addEventListener('mouseenter', () => {
+                    div.querySelector('img').style.transform = 'scale(1.1)';
+                });
+                div.addEventListener('mouseleave', () => {
+                    div.querySelector('img').style.transform = 'scale(1)';
+                });
+                container.appendChild(div);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createGeometricShapes();
+            animateOnScroll();
+            renderHistoricalEvents();
+            renderKings();
+            renderVision2030();
+            renderAchievements();
+            renderProjects();
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
